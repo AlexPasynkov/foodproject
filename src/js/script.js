@@ -2,6 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
+    //Tabs 
     let tabs = document.querySelectorAll('.tabheader__item'),
         tabsContent = document.querySelectorAll('.tabcontent'),
         tabsParent = document.querySelector('.tabheader__items');
@@ -9,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function hideTabContent() {
         tabsContent.forEach(item => {
             //item.style.display = 'none';
-            item.classList.add('hide');
+            item.classList.add('hide', 'fade');
             item.classList.remove('show');
         });
 
@@ -20,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function showTabContent(i = 0){
        // tabsContent[i].style.display = 'block';
-        tabsContent[i].classList.add('show');
+        tabsContent[i].classList.add('show', 'fade');
         tabsContent[i].classList.remove('hide');
         tabs[i].classList.add('tabheader__item_active');
     }
@@ -39,5 +40,17 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 		}
 	});
+
+    const timerId = setTimeout(function() {
+        console.log('Hello');
+    });
     
+    //Timer
+
+    const deadline = '2021-05-11';
+
+    function getTimeRemaining(endtime){
+        const t = Date.parse(endtime);
+    }
+
 });
